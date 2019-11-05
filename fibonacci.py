@@ -56,7 +56,7 @@ def fibo04(n):
     more efficient and faster for big inputs
     '''
     answers = [1, 1]
-    for i in range(2, n):
+    for i in range(2, n + 1):
         answers.append(answers[-1] + answers[-2])
         answers.pop(0)
 
@@ -71,11 +71,12 @@ def fibo05(n):
         return 1
 
     answers = [1,1, None]
-    for i in range(2, n):
+    for i in range(2, n + 1):
         answers[2] = answers[1] + answers[0]
         answers[0], answers[1] = answers[1], answers[2]
 
     return answers[-1]
+
 
 if __name__ == "__main__":
     n = int(sys.argv[1])
